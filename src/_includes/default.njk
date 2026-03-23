@@ -13,21 +13,35 @@
     <link rel="manifest" href="{{ '/site.webmanifest' | url }}"/>
     <title>{{ title or metadata.title }}</title>
     <link rel="stylesheet" href="{{ '/site.css' | url }}"/>
+    <script src="{{ '/menu.js' | url }}"></script>
   </head>
   <body class="font-sans leading-normal tracking-normal text-gray-900">
-    <header class="bg-blue text-white align-center p-2 flex justify-between">
+    <header class="bg-blue text-white align-center items-center px-4 py-6 flex justify-between">
       <a href="/" class="flex flex-col justify-center">
         <h1 class="font-bold">Mae Be</h1>
       </a>
-      <ul>
-        <li><a href="/learn-spanish">Cours d'Espagnol</a></li>
-      </ul>
+      <button id="menu-btn" class="w-12 h-12">
+        <img src="{{ '/menu.png' | url }}" />
+      </button>
     </header>
     <main class="bg-lightgray pt-8 overflow-hidden">
       {{ content | safe }}
     </main>
     <footer class="p-8 bg-blue text-white border-t text-sm">
       <a href="https://www.flaticon.com/free-icons/communication" title="communication icons">Communication icons created by Vectors Market - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/three-lines" title="three-lines icons">Three-lines icons created by Fathema Khanom - Flaticon</a>
     </footer>
+
+    <div id="menu-overlay" class=" bg-pink/90 text-white left-0 top-0 z-50 absolute w-full h-full bg-white hidden">
+      <button id="close-menu-btn">close</button>
+      <ul class="flex flex-col">
+        <li class="text-center border">
+          <a href="{{ '/learn-spanish' | url }}" class="block p-6 border-2 border-blue">
+            Apprends l'Espagnol
+          </a>
+        </li>
+        <li><a href="{{ '/learn-spanish' | url }}">Apprends l'Espagnol</a></li>
+      </ul>
+    </div>
   </body>
 </html>

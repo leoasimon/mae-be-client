@@ -4,7 +4,8 @@ module.exports = {
     colors: {
       lightgray: '#F8F7F2',
       blue: '#052E68',
-      white: '#FFFFFF'
+      white: '#FFFFFF',
+      pink: '#ff2147'
     },
     extend: {
     },
