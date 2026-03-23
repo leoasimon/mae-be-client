@@ -6,7 +6,8 @@ module.exports = {
       blue: '#052E68',
       white: '#FFFFFF'
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 };

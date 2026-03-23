@@ -2,38 +2,52 @@
 layout: default
 ---
 
-<div
-    class="bg-lightgray">
+<div class="bg-lightgray text-blue">
+    <style>
+        .shadow-pic {
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        .shadow-top {
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        }
+    </style>
     {# Title and pics #}
     <article class="p-2 z-10 relative mt-10 mb-10">
         <h1 class="uppercase text-4xl text-blue font-bold text-center">Apprends l'Espagnol</h1>
         <h3 class="upper text-blue font-bold text-center text-2xl mb-6">Pour voyager !</h3>
         <div class="flex justify-center gap-1 h-[180px]">
-            <div class="mt-6 -rotate-12 w-[160px] h-[180px] shadow-md p-2">
-                <div class="w-full h-full bg-white"></div>
+            <div class="mt-6 -rotate-12 w-[160px] h-[180px] shadow-pic p-2">
+                <div class="w-full h-full bg-white">
+                    <img src="{{ '/spanish_2.jpeg' | url}}" />
+                </div>
             </div>
-            <div class="mt-12 rotate-8 w-[160px] h-[180px] shadow-md p-2">
-                <div class="w-full h-full bg-white"></div>
+            <div class="mt-12 rotate-8 w-[160px] h-[180px] shadow-pic p-2">
+                <div class="w-full h-full bg-white">
+                    <img src="{{ '/spanish_1.jpeg' | url}}" />
+                </div>
             </div>
         </div>
     </article>
-    <div class="h-[120px] mb-[-40px] bg-lightgray w-[120%] ml-[-10%] -rotate-12 mt-[-3em] relative z-20 mb-8">
+
+    <div class="shadow-top h-[120px] mb-[-40px] bg-lightgray w-[120%] ml-[-10%] -rotate-12 mt-[-3em] relative z-20 mb-8">
         <h4 class="bg-blue text-white text-center uppercase text-xl">
             Parlez dès le premier cours !
         </h4>
     </div>
-    <article class="bg-lightgray z-30 relative">
-        <div class="flex gap-2 p-2">
-            <div class="flex flex-col items-center">
+
+    {# Infos #}
+    <article class="bg-lightgray z-30 relative mb-4">
+        <div class="flex gap-2 p-2 mb-4">
+            <div class="flex flex-1 flex-col items-center">
                 <h3 class="font-serif italic font-bold text-2xl text-blue mb-2 underline">
                     Programme :
                 </h3>
-                <ol class="list-disc text-md">
+                <ul class="list-disc text-md pl-5 text-center">
                     <li>Vocabulaire et structures de base</li>
                     <li>Situations réelles</li>
                     <li>Confiance à l'oral</li>
                     <li>Préparer son voyage</li>
-                </ol>
+                </ul>
             </div>
             <div class="flex flex-col gap-1 items-center">
                 <img src="{{ '/communication.png' | url}}" width="80px"/>
@@ -45,11 +59,11 @@ layout: default
                 </span>
             </div>
         </div>
-        <div class="p-2">
-            <span class="font-serif italic">*Avec une Enseignante qualifiée et une Backpacker expérimentée !</span>
+        <div class="p-2 text-center">
+            <span class="font-serif italic text-center italic bold text-blue text-xl">*Avec une Enseignante qualifiée et une Backpacker expérimentée !</span>
         </div>
     </article>
-    <article class="p-2">
+    <article class="p-4 bg-blue text-white uppercase flex flex-col items-center font-bold">
         <span>Contact :
             <a href="tel:+33745357053">07.45.35.70.53</a>
         </span>
