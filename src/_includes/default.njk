@@ -16,11 +16,16 @@
     <script src="{{ '/menu.js' | url }}"></script>
   </head>
   <body class="font-sans leading-normal tracking-normal text-gray-900">
+    <style>
+      .font-sig {
+          font-family: TheSignature;
+      }
+    </style>
     <header class="bg-blue text-white align-center items-center px-4 py-6 flex justify-between">
       <a href="/" class="flex flex-col justify-center">
-        <h1 class="font-bold">Mae Be</h1>
+        <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
       </a>
-      <button id="menu-btn" class="w-12 h-12">
+      <button id="menu-btn" class="w-12 h-12 hidden">
         <img src="{{ '/menu.png' | url }}" />
       </button>
     </header>

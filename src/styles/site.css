@@ -8,3 +8,15 @@
     --color-lightgray: #F8F7F2;
     --color-blue: #052E68
 }
+
+@font-face {
+    font-family: Cormorant;
+    src: url('/cormorant/Cormorant-SemiItalic.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: TheSignature;
+    src: url('/thesignature/Thesignature.otf') format('opentype');
+    font-display: swap;
+}
