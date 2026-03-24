@@ -21,20 +21,37 @@
           font-family: TheSignature;
       }
     </style>
-    <header class="bg-blue text-white align-center items-center px-4 py-6 flex justify-between">
-      <a href="/" class="flex flex-col justify-center">
-        <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
-      </a>
-      <button id="menu-btn" class="w-12 h-12 hidden">
-        <img src="{{ '/menu.png' | url }}" />
-      </button>
+    <header class="flex justify-center text-white">
+      <div class="md:w-[720px] w-full bg-blue flex justify-between align-center items-center p-2">
+        <a href="/" class="flex flex-col justify-center px-4 py-6">
+          <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
+        </a>
+        <button id="menu-btn" class="w-12 h-12 hidden">
+          <img src="{{ '/menu.png' | url }}" />
+        </button>
+      </div>
     </header>
-    <main class="bg-lightgray pt-8 overflow-hidden">
-      {{ content | safe }}
+    <main class="flex justify-center">
+      <div class="md:w-[720px] w-full pt-8 overflow-hidden md:border-2 border-blue bg-lightgray">
+        {{ content | safe }}
+      </div>
     </main>
-    <footer class="p-8 bg-blue text-white border-t text-sm">
-      <a href="https://www.flaticon.com/free-icons/communication" title="communication icons">Communication icons created by Vectors Market - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/three-lines" title="three-lines icons">Three-lines icons created by Fathema Khanom - Flaticon</a>
+    <footer class="text-white border-t text-xs flex justify-center">
+      <div class="md:w-[720px] w-full bg-blue p-4 border-t flex">
+        <div class="flex-1 border-r p-4">
+          <h1 class="bold underline text-md uppercase mb-4">Crédits</h1>
+          <ul class="list-disc pl-4">
+            <li>
+              <a href="https://www.flaticon.com/free-icons/communication" title="communication icons">Communication icons created by Vectors Market - Flaticon</a>
+            </li>
+            <li>
+              <a href="https://www.flaticon.com/free-icons/three-lines" title="three-lines icons">Three-lines icons created by Fathema Khanom - Flaticon</a>
+            </li>
+          <ul> 
+        </div>
+        <div class="flex flex-1 border-r p-4"></div>
+        <div class="flex flex-1 p-4"></div>
+      </div>
     </footer>
 
     <div id="menu-overlay" class=" bg-pink/90 text-white left-0 top-0 z-50 absolute w-full h-full bg-white hidden">
