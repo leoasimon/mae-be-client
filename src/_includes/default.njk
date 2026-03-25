@@ -1,3 +1,8 @@
+---
+eleventyImport:
+  collections: ["course"]
+---
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -22,11 +27,11 @@
       }
     </style>
     <header class="flex justify-center text-white">
-      <div class="md:w-[720px] w-full bg-blue flex justify-between align-center items-center p-2">
-        <a href="/" class="flex flex-col justify-center px-4 py-6">
+      <div class="md:w-[720px] w-full bg-blue flex justify-between align-center items-center px-6 py-8">
+        <a href="/" class="flex flex-col justify-center">
           <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
         </a>
-        <button id="menu-btn" class="w-12 h-12 hidden">
+        <button id="menu-btn" class="w-10 h-10">
           <img src="{{ '/menu.png' | url }}" />
         </button>
       </div>
@@ -36,34 +41,103 @@
         {{ content | safe }}
       </div>
     </main>
+
     <footer class="text-white border-t text-xs flex justify-center">
-      <div class="md:w-[720px] w-full bg-blue p-4 border-t flex">
-        <div class="flex-1 border-r p-4">
-          <h1 class="bold underline text-md uppercase mb-4">Crédits</h1>
-          <ul class="list-disc pl-4">
-            <li>
-              <a href="https://www.flaticon.com/free-icons/communication" title="communication icons">Communication icons created by Vectors Market - Flaticon</a>
-            </li>
-            <li>
-              <a href="https://www.flaticon.com/free-icons/three-lines" title="three-lines icons">Three-lines icons created by Fathema Khanom - Flaticon</a>
-            </li>
-          <ul> 
+      <div class="md:w-[720px] w-full bg-blue p-4 border-t flex flex-col pb-4">
+        <div class="w-full text-center pb-4">
+          <span><b>Mae Be</b> | © Maëlisse Bescot - 2026</span>
         </div>
-        <div class="flex flex-1 border-r p-4"></div>
-        <div class="flex flex-1 p-4"></div>
+        <div class="flex w-full" id="footer-sections">
+          <div class="w-full">
+            <b class="font-sig mb-2 block text-lg">Mae Be</b>
+            <div class="flex gap-2 justify-between w-full">
+              <div>
+                <b>Mes cours</b>
+                <ul class="pl-2">
+                  <li>Espagnol</li>
+                  <li>Maths</li>
+                  <li>Oraux</li>
+                  <li>
+                    <a href="{{ '/cours/aide_aux_devoirs' | url }}">
+                      Aide aux devoirs
+                    </a>
+                  </li>
+                  <li>Coaching</li>
+                </ul>
+              </div>
+              <div>
+                <b>Moi</b>
+                <ul class="pl-2">
+                  <li>A propos</li>
+                  <li>Blog</li>
+                  <li>Gallerie</li>
+                </ul>
+              </div>
+              <div>
+                <b>Contact</b>
+                <ul class="pl-2">
+                  <li><a href="tel:+33745357053">07.45.35.70.53</a></li>
+                  <li>Mae_be@proton.me</li>
+                </ul>
+              </div>
+              <div class="max-w-64">
+                <b>Crédits</b>
+                <ul class="pl-2">
+                  <li>
+                    <a href="https://www.flaticon.com/free-icons/communication" title="communication icons">Communication icons created by Vectors Market - Flaticon</a>
+                  </li>
+                  <li>
+                    <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by SeyfDesigner - Flaticon</a>
+                  </li>
+                  <li>
+                    <a href="https://www.flaticon.com/free-icons/options" title="options icons">Options icons created by BomSymbols - Flaticon</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
 
-    <div id="menu-overlay" class=" bg-pink/90 text-white left-0 top-0 z-50 absolute w-full h-full bg-white hidden">
-      <button id="close-menu-btn">close</button>
-      <ul class="flex flex-col">
-        <li class="text-center border">
-          <a href="{{ '/learn-spanish' | url }}" class="block p-6 border-2 border-blue">
-            Apprends l'Espagnol
-          </a>
-        </li>
-        <li><a href="{{ '/learn-spanish' | url }}">Apprends l'Espagnol</a></li>
-      </ul>
+    {# Menu #}
+    <div id="menu-overlay" class="bg-white font-mono left-0 top-0 z-50 absolute w-full h-full hidden">
+      <div class="px-6 py-8 flex justify-between items-center">
+        <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
+        <button id="close-btn" class="w-12 h-12">
+          <img src="{{ '/close.png' | url }}" />
+        </button>
+      </div>
+      <div class="p-4">
+        <h1 class="text-xl border-b mb-2">Mes cours</h1>
+          <ul class="flex flex-col pl-6">
+            {%- for course in collections.course -%}
+            <li class="pt-4">
+              <a href="{{ course.url }}" class="h-full align-middle">
+                {{ course.data.title }}
+              </a>
+            </li>
+            {%- endfor -%}
+          </ul>
+      </div>
+      <div class="p-4">
+        <h1 class="text-xl border-b mb-2">A propos de moi</h1>
+          <ul class="flex flex-col pl-6">
+            {%- for course in collections.about-%}
+              <li class="pt-4">
+                <a href="{{ course.url }}" class="h-full align-middle">
+                  {{ course.data.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+      </div>
+      <div class="bg-blue text-white bottom-0 absolute w-full text-center py-12">
+        <h1>Contactez-moi !</h1>
+        <ul>
+          <li><a href="tel:+33745357043">07.45.35.70.43</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
