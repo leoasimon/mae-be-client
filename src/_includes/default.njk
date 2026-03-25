@@ -1,6 +1,6 @@
 ---
 eleventyImport:
-  collections: ["course"]
+  collections: ["course", "about"]
 ---
 
 <!DOCTYPE html>
@@ -54,23 +54,25 @@ eleventyImport:
               <div>
                 <b>Mes cours</b>
                 <ul class="pl-2">
-                  <li>Espagnol</li>
-                  <li>Maths</li>
-                  <li>Oraux</li>
-                  <li>
-                    <a href="{{ '/cours/aide_aux_devoirs' | url }}">
-                      Aide aux devoirs
-                    </a>
-                  </li>
-                  <li>Coaching</li>
+                  {%- for course in collections.course -%}
+                    <li>
+                      <a href="{{ course.url }}">
+                        {{ course.data.title }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
                 </ul>
               </div>
               <div>
                 <b>Moi</b>
                 <ul class="pl-2">
-                  <li>A propos</li>
-                  <li>Blog</li>
-                  <li>Gallerie</li>
+                  {%- for about in collections.about -%}
+                    <li>
+                      <a href="{{ about.url }}">
+                        {{ about.data.title }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
                 </ul>
               </div>
               <div>
