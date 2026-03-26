@@ -26,24 +26,71 @@ eleventyImport:
           font-family: TheSignature;
       }
     </style>
-    <header class="flex justify-center text-white">
-      <div class="md:w-[720px] w-full bg-blue flex justify-between align-center items-center px-6 py-8">
+    <header class="flex justify-center text-white border-b border-white">
+      <div class="w-full bg-blue flex justify-between align-center items-center px-6 py-8">
         <a href="/" class="flex flex-col justify-center">
           <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
         </a>
-        <button id="menu-btn" class="w-10 h-10">
+        <button id="menu-btn" class="w-10 h-10 block md:hidden">
           <img src="{{ '/menu.png' | url }}" />
         </button>
       </div>
     </header>
-    <main class="flex justify-center">
-      <div class="md:w-[720px] w-full pt-8 overflow-hidden md:border-2 border-blue bg-lightgray">
-        {{ content | safe }}
-      </div>
-    </main>
+
+    <div class="flex">
+      {# Menu #}
+      <aside
+        id="menu-overlay"
+        class="bg-white text-black md:pt-4 md:bg-blue md:text-white font-mono left-0 top-0 z-50 absolute w-full h-full hidden md:block md:w-[320px] md:relative md:h-auto"
+      >
+        <div class="px-6 py-8 flex justify-between items-center md:hidden block">
+          <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
+          <button id="close-btn" class="w-12 h-12">
+            <img src="{{ '/close.png' | url }}" />
+          </button>
+        </div>
+        <div class="p-4">
+          <h1 class="text-xl border-b mb-2">Mes cours</h1>
+            <ul class="flex flex-col pl-6">
+              {%- for course in collections.course -%}
+              <li class="pt-4">
+                <a href="{{ course.url }}" class="h-full align-middle">
+                  {{ course.data.title }}
+                </a>
+              </li>
+              {%- endfor -%}
+            </ul>
+        </div>
+        <div class="p-4">
+          <h1 class="text-xl border-b mb-2">A propos de moi</h1>
+            <ul class="flex flex-col pl-6">
+              {%- for course in collections.about-%}
+                <li class="pt-4">
+                  <a href="{{ course.url }}" class="h-full align-middle">
+                    {{ course.data.title }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+        </div>
+        <div class="bg-blue text-white bottom-0 absolute w-full text-center py-12">
+          <h1>Contactez-moi !</h1>
+          <ul>
+            <li><a href="tel:+33745357043">07.45.35.70.43</li>
+          </ul>
+        </div>
+      </aside>
+
+      {# Main #}
+      <main class="flex justify-center w-full bg-blue md:pt-4">
+        <div class="lg:w-[720px] md:w-[600px] w-full pt-8 overflow-hidden bg-lightgray">
+          {{ content | safe }}
+        </div>
+      </main>
+    </div>
 
     <footer class="text-white border-t text-xs flex justify-center">
-      <div class="md:w-[720px] w-full bg-blue p-4 border-t flex flex-col pb-4">
+      <div class="w-full bg-blue p-4 border-t flex flex-col pb-4">
         <div class="w-full text-center pb-4">
           <span><b>Mae Be</b> | © Maëlisse Bescot - 2026</span>
         </div>
@@ -102,44 +149,5 @@ eleventyImport:
       </div>
     </footer>
 
-    {# Menu #}
-    <div id="menu-overlay" class="bg-white font-mono left-0 top-0 z-50 absolute w-full h-full hidden">
-      <div class="px-6 py-8 flex justify-between items-center">
-        <h1 class="font-sig font-bold underline text-2xl">Mae Be</h1>
-        <button id="close-btn" class="w-12 h-12">
-          <img src="{{ '/close.png' | url }}" />
-        </button>
-      </div>
-      <div class="p-4">
-        <h1 class="text-xl border-b mb-2">Mes cours</h1>
-          <ul class="flex flex-col pl-6">
-            {%- for course in collections.course -%}
-            <li class="pt-4">
-              <a href="{{ course.url }}" class="h-full align-middle">
-                {{ course.data.title }}
-              </a>
-            </li>
-            {%- endfor -%}
-          </ul>
-      </div>
-      <div class="p-4">
-        <h1 class="text-xl border-b mb-2">A propos de moi</h1>
-          <ul class="flex flex-col pl-6">
-            {%- for course in collections.about-%}
-              <li class="pt-4">
-                <a href="{{ course.url }}" class="h-full align-middle">
-                  {{ course.data.title }}
-                </a>
-              </li>
-            {%- endfor -%}
-          </ul>
-      </div>
-      <div class="bg-blue text-white bottom-0 absolute w-full text-center py-12">
-        <h1>Contactez-moi !</h1>
-        <ul>
-          <li><a href="tel:+33745357043">07.45.35.70.43</li>
-        </ul>
-      </div>
-    </div>
   </body>
 </html>
