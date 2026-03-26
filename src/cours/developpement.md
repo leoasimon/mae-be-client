@@ -1,7 +1,7 @@
 ---
 title: Développement informatique
 subtitle: Apprends à développer en Javascript en créant des projets
-layout: default
+layout: course
 tags:
   - course
 image: /js.jpg

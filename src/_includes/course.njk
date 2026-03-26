@@ -2,13 +2,35 @@
 layout: default
 ---
 
-<section>
-    <article class="p-2">
+<style>
+    .course-section p {
+        margin-bottom: 1em;
+    }
+    .course-section h4 {
+        font-weight: bold;
+    }
+    .course-section ul {
+        padding-left: 2em;
+        list-style: disc;
+    }
+
+    .course-section ul p {
+        margin-bottom: 0;
+    }
+</style>
+
+<section class="course-section">
+    <article class="p-2 text-center">
         <h1 class="text-3xl">{{ title }}</h1>
         <h2 class="text-xl">{{ subtitle }}</h2>
     </article>
-    <img src={{ image | url }}/>
-    <article class="p-2">
+    <article class="flex justify-center">
+        <img src="{{ image | url }}"/>
+    </article>
+    <article class="p-2 mt-4">
         {{ content | safe }}
+    </article>
+    <article class="flex justify-end p-2">
+        <span class="font-bold">{{ timeCost }}</span>
     </article>
 </section>
