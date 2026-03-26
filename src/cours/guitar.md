@@ -1,9 +1,9 @@
 ---
 title: Guitare
-layout: default
+layout: course
 tags:
   - course
-image: /src/static/guitar.jpg
+image: /guitar.jpg
 ___mb_schema: /.mattrbld/schemas/course.json
 ---
 ## Leçons de guitare
