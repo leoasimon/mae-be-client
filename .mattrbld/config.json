@@ -76,7 +76,7 @@
     "customFields": null,
     "dir": "/src/static",
     "maxSize": null,
-    "outputPath": null,
+    "outputPath": "/",
     "permissions": {
       "owner": [
         "everything"
