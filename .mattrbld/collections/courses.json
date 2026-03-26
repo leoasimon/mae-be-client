@@ -1,0 +1,24 @@
+{
+  "allowedTypes": [],
+  "defaultFilename": null,
+  "dir": "/src/cours",
+  "disableComments": false,
+  "disablePreview": false,
+  "draftByDefault": false,
+  "linkable": false,
+  "maxSize": null,
+  "permissions": {
+    "editor": [
+      "editContent"
+    ],
+    "owner": [
+      "everything"
+    ]
+  },
+  "rawEntityNames": false,
+  "schemas": [
+    "/.mattrbld/schemas/course.json"
+  ],
+  "type": "md",
+  "urlTemplate": ""
+}

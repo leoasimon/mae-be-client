@@ -38,6 +38,16 @@
       "protected": true
     },
     {
+      "icon": null,
+      "label": "courses",
+      "target": {
+        "name": "Project.Collection",
+        "params": {
+          "path": "/.mattrbld/collections/courses.json"
+        }
+      }
+    },
+    {
       "label": "Settings",
       "icon": "settings",
       "target": {
@@ -64,12 +74,16 @@
   "media": {
     "advanced": false,
     "customFields": null,
-    "dir": null,
+    "dir": "/src/static",
     "maxSize": null,
     "outputPath": null,
     "permissions": {
-      "everybody": [
+      "owner": [
         "everything"
+      ],
+      "editor": [
+        "upload",
+        "deleteMedia"
       ]
     }
   }
