@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<style>
-    h2 {
-        font-size: 32px;
-    }
-</style>
-
 <section>
-    <img src={{ image | url }} />
-    {{ content | safe }}
+    <article class="p-2">
+        <h1 class="text-3xl">{{ title }}</h1>
+        <h2 class="text-xl">{{ subtitle }}</h2>
+    </article>
+    <img src={{ image | url }}/>
+    <article class="p-2">
+        {{ content | safe }}
+    </article>
 </section>
