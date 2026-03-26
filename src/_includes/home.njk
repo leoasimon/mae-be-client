@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<style>
+    .shadow-card {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+</style>
+
+<section class="p-2">
+    <h1 class="text-3xl text-center font-extrabold text-gray">Besoin d'aide avec tes cours ?</h1>
+</section>
+
+<section class="grid grid-cols-2 gap-2 p-2 bg-lightgray">
+    {%- for course in collections.course -%}
+        <a href="{{ course.url }}">
+            <article class="p-4 rounded-lg bg-white shadow-card h-48 flex flex-col justify-between">
+                <div>
+                    <h1 class="text-center font-bold text-lg">{{ course.data.title }}</h1>
+                    <h2 class="text-md text-gray">{{ course.data.subtitle }}</h2>
+                </div>
+                <div class="flex justify-end">
+                    <span class="text-gray font-bold font-mono">{{ course.data.timeCost }}</span>
+                </div>
+            </article>
+        </a>
+    {%- endfor -%}
+</section>
+
+<section class="p-2 text-lg">
+    <article class="text-gray">
+        <span>Formation : Master d'enseignement des Mathématiques en collège et lycée</span><br />
+        <span>+ Voyage : 1 an et demi en Amérique latine</span>
+    </article>
+    <article class="mt-4 text-center font-bold">
+        <span>Maëlisse Bescot : <a href="tel:+33745357053">07.45.35.70.53</a></span>
+    </article>
+</section>
