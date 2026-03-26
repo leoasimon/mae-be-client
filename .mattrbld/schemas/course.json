@@ -62,7 +62,7 @@
     },
     {
       "type": "text",
-      "default": "default",
+      "default": "course",
       "icon": "text-input",
       "key": "layout",
       "label": "Layout",
