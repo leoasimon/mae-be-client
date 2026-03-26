@@ -32,6 +32,36 @@
     },
     {
       "type": "text",
+      "default": null,
+      "icon": "text-input",
+      "key": "subtitle",
+      "label": "Subtitle",
+      "localised": false,
+      "options": {
+        "wrapping": true,
+        "multiline": false
+      },
+      "tab": "Untitled Tab",
+      "validation": {
+        "enforceMinMax": true,
+        "max": null,
+        "min": null,
+        "regex": null,
+        "regexError": null,
+        "required": false,
+        "unit": "length"
+      },
+      "value": null,
+      "version": 1,
+      "visibility": {
+        "hidden": false,
+        "showByValue": {
+          "field": null
+        }
+      }
+    },
+    {
+      "type": "text",
       "default": "default",
       "icon": "text-input",
       "key": "layout",
@@ -164,6 +194,36 @@
           "allowExternal",
           "allowInternal"
         ]
+      },
+      "tab": "Untitled Tab",
+      "validation": {
+        "enforceMinMax": true,
+        "max": null,
+        "min": null,
+        "regex": null,
+        "regexError": null,
+        "required": false,
+        "unit": "length"
+      },
+      "value": null,
+      "version": 1,
+      "visibility": {
+        "hidden": false,
+        "showByValue": {
+          "field": null
+        }
+      }
+    },
+    {
+      "type": "text",
+      "default": "30€/50min",
+      "icon": "text-input",
+      "key": "timeCost",
+      "label": "Time / Cost",
+      "localised": false,
+      "options": {
+        "wrapping": true,
+        "multiline": false
       },
       "tab": "Untitled Tab",
       "validation": {
