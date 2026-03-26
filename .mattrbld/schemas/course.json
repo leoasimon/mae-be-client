@@ -31,14 +31,46 @@
       }
     },
     {
+      "type": "text",
+      "default": "default",
+      "icon": "text-input",
+      "key": "layout",
+      "label": "Layout",
+      "localised": false,
+      "options": {
+        "wrapping": false,
+        "multiline": false
+      },
+      "tab": "Untitled Tab",
+      "validation": {
+        "enforceMinMax": true,
+        "max": null,
+        "min": null,
+        "regex": null,
+        "regexError": null,
+        "required": true,
+        "unit": "length"
+      },
+      "value": null,
+      "version": 1,
+      "visibility": {
+        "hidden": true,
+        "showByValue": {
+          "field": null
+        }
+      }
+    },
+    {
       "type": "tags",
-      "default": null,
+      "default": [
+        "course"
+      ],
       "icon": "tags",
       "key": "tags",
       "label": "Tags",
       "localised": false,
       "options": {
-        "allowUnsuggested": true,
+        "allowUnsuggested": false,
         "autocompleteModel": []
       },
       "tab": "Untitled Tab",
@@ -50,7 +82,7 @@
       "value": null,
       "version": 1,
       "visibility": {
-        "hidden": false,
+        "hidden": true,
         "showByValue": {
           "field": null
         }
